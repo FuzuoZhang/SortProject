@@ -55,6 +55,13 @@ int main()
     starttime = clock();
     QuickSort(0,n-1);
     endtime = clock();
+
+	for (int j = 0; j < n-1; j++) {
+		if (num[j] > num[j + 1]) {
+			throw "sort error!";
+		}
+	}
+
     savedata("./sort.txt",num);
     double sorttime = (double)(endtime - starttime)/CLOCKS_PER_SEC;
     printf("sort time:%f s",sorttime);
